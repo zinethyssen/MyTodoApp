@@ -23,6 +23,16 @@ public class TodoList {
         count = 0;
     }
 
+    // Method to add a Todo item
+    public void addTodoItem(String description) {
+        if (count < todoItems.length) {
+            todoItems[count] = new TodoItem(description);
+            count++;
+        } else {
+            System.out.println("Todo list is full!");
+        }
+    }
+    
     // Method to display all Todo items
     public void displayTodoItems() {
         for (int i = 0; i < count; i++) {
@@ -34,6 +44,10 @@ public class TodoList {
         // Create a TodoList object with space for 5 items
         TodoList myTodoList = new TodoList(5);
 
+        // Add some todo items
+        myTodoList.addTodoItem("Finish Java assignment");
+        myTodoList.addTodoItem("Grocery shopping");
+        
         // Display all items
         myTodoList.displayTodoItems();
     }
